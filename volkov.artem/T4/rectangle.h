@@ -1,8 +1,25 @@
-//
-// Created by Artem on 17.04.2026.
-//
+#ifndef RECTANGLE_H
+#define RECTANGLE_H
 
-#ifndef TP_2026_RECTANGLE_H
-#define TP_2026_RECTANGLE_H
+#include "shape.h"
 
-#endif //TP_2026_RECTANGLE_H
+class Rectangle : public Shape {
+private:
+    Point leftBottom;
+    Point rightTop;
+
+public:
+    Rectangle(const Point &lb, const Point &rt);
+
+    double getArea() const override;
+
+    Point getCenter() const override;
+
+    void move(double dx, double dy) override;
+
+    void scale(double factor) override;
+
+    std::string getName() const override;
+};
+
+#endif

@@ -1,8 +1,22 @@
-//
-// Created by Artem on 17.04.2026.
-//
+#ifndef SHAPE_H
+#define SHAPE_H
 
-#ifndef TP_2026_SHAPE_H
-#define TP_2026_SHAPE_H
+#include <string>
+#include "point.h"
 
-#endif //TP_2026_SHAPE_H
+class Shape {
+public:
+    virtual ~Shape() = default;
+
+    virtual double getArea() const = 0;
+
+    virtual Point getCenter() const = 0;
+
+    virtual void move(double dx, double dy) = 0;
+
+    virtual void scale(double factor) = 0;
+
+    virtual std::string getName() const = 0;
+};
+
+#endif

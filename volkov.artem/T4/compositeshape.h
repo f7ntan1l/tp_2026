@@ -1,8 +1,28 @@
-//
-// Created by Artem on 17.04.2026.
-//
+#ifndef COMPOSITESHAPE_H
+#define COMPOSITESHAPE_H
 
-#ifndef TP_2026_COMPOSITESHAPE_H
-#define TP_2026_COMPOSITESHAPE_H
+#include "shape.h"
+#include <vector>
+#include <memory>
 
-#endif //TP_2026_COMPOSITESHAPE_H
+class CompositeShape : public Shape {
+private:
+    std::vector<std::shared_ptr<Shape> > shapes;
+
+public:
+    void addShape(const std::shared_ptr<Shape> &shape);
+
+    double getArea() const override;
+
+    Point getCenter() const override;
+
+    void move(double dx, double dy) override;
+
+    void scale(double factor) override;
+
+    std::string getName() const override;
+
+    const std::vector<std::shared_ptr<Shape> > &getShapes() const;
+};
+
+#endif

@@ -1,8 +1,9 @@
-//
-// Created by Artem on 17.04.2026.
-//
+#ifndef POINT_H
+#define POINT_H
 
-#ifndef TP_2026_POINT_H
-#define TP_2026_POINT_H
+struct Point {
+    double x;
+    double y;
+};
 
-#endif //TP_2026_POINT_H
+#endif
