@@ -22,13 +22,14 @@ void Rectangle::move(double dx, double dy)
     vertex2_.x += dx;
     vertex1_.y += dy;
     vertex2_.y += dy;
+    center_.x += dx;
+    center_.y += dy;
 }
 
 void Rectangle::scale(double k)
 {
-    Point center = getCenter();
-    double dx = center.x - vertex1_.x;
-    double dy = center.y - vertex1_.y;
+    double dx = center_.x - vertex1_.x;
+    double dy = center_.y - vertex1_.y;
 
     vertex1_.x -= dx * k;
     vertex2_.x -= dx * k;
