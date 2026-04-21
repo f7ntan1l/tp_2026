@@ -1,6 +1,6 @@
 #include <iostream>
 
-int main() 
+int main()
 {
     std::cout << "rizleytseva.olya" << std::endl;
     return 0;
