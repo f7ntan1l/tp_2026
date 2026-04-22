@@ -16,6 +16,10 @@ class Rectangle : public Shape
     void scale(double);
     std::string getName() const;
 
+
+    Point getLeftLower() const;
+    Point getRightUpper() const;
+
     private:
     Point vertex1_, vertex2_, center_;
 };

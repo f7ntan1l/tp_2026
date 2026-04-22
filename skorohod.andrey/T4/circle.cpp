@@ -32,3 +32,12 @@ std::string Circle::getName() const
 {
     return "CIRCLE";
 }
+
+Point Circle::getLeftLower() const
+{
+    return {(center_.x - radius_), (center_.y - radius_)};
+}
+Point Circle::getRightUpper() const
+{
+    return {(center_.x + radius_), (center_.y + radius_)};
+}

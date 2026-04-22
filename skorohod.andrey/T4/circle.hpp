@@ -16,6 +16,9 @@ class Circle : public Shape
     void scale(double);
     std::string getName() const;
 
+    Point getLeftLower() const;
+    Point getRightUpper() const;
+
     private:
     Point center_;
     double radius_;

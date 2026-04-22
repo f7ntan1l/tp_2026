@@ -12,7 +12,7 @@ double CompositeShape::getArea() const
 
 Point CompositeShape::getCenter() const
 {
-    
+
 }
 
 void CompositeShape::move(double dx, double dy)
@@ -41,4 +41,30 @@ void CompositeShape::scale(double k)
 std::string CompositeShape::getName() const
 {
     return "COMPOSITE";
+}
+
+
+Point CompositeShape::getLeftLower() const
+{
+    Point extremeLeftLower = shapeContainer_[0]->getLeftLower();
+
+    for (auto &i : shapeContainer_)
+    {
+        extremeLeftLower.x = std::min(extremeLeftLower.x, i->getLeftLower().x);
+        extremeLeftLower.y = std::min(extremeLeftLower.y, i->getLeftLower().y);
+    }
+
+    return extremeLeftLower;
+}
+Point CompositeShape::getRightUpper() const
+{
+    Point extremeRightUpper = shapeContainer_[0]->getRightUpper();
+
+    for (auto &i : shapeContainer_)
+    {
+        extremeRightUpper.x = std::max(extremeRightUpper.x, i->getRightUpper().x);
+        extremeRightUpper.y = std::max(extremeRightUpper.y, i->getRightUpper().y);
+    }
+
+    return extremeRightUpper;
 }

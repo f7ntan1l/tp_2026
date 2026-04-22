@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include <memory>
+#include <algorithm>
 #include "shape.hpp"
 
 class CompositeShape : public Shape
@@ -19,6 +20,9 @@ class CompositeShape : public Shape
     std::string getName() const;
 
     void addShape(std::unique_ptr<Shape>);
+
+    Point getLeftLower() const;
+    Point getRightUpper() const;
 
     private:
     std::vector<std::unique_ptr<Shape>> shapeContainer_;

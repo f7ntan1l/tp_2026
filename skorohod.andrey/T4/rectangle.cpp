@@ -41,3 +41,12 @@ std::string Rectangle::getName() const
 {
     return "RECTANGLE";
 }
+
+Point Rectangle::getLeftLower() const
+{
+    return vertex1_;
+}
+Point Rectangle::getRightUpper() const
+{
+    return vertex2_;
+}

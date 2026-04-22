@@ -13,6 +13,9 @@ class Shape
     virtual void move(double, double) = 0;
     virtual void scale(double) = 0;
     virtual std::string getName() const = 0;
+
+    virtual Point getLeftLower() const = 0;
+    virtual Point getRightUpper() const  = 0;
 };
 
 #endif
