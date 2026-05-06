@@ -91,7 +91,7 @@ namespace nspace
     if (!sentry) return out;
     iofmtguard fmtguard(out);
     out << "(:key1 '" << src.key1 << "':key2 "
-        << std::scientific << std::setprecision(1) << src.key2 // 1.0e+01 [cite: 45, 81]
+        << std::scientific << std::setprecision(1) << std::nouppercase << src.key2
         << ":key3 \"" << src.key3 << "\":)";
     return out;
   }
