@@ -55,7 +55,7 @@ void CompositeShape::scale(double factor) {
 
         double dx = (shapeCenter.x - baseCenter.x) * (factor - 1.0);
         double dy = (shapeCenter.y - baseCenter.y) * (factor - 1.0);
-        
+
         shape->move(dx, dy);
         shape->scale(factor);
     }
